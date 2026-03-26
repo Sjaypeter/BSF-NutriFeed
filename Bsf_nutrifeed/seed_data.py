@@ -1,6 +1,6 @@
 import os
 import django
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bsf_nutrifeed.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Bsf_nutrifeed.settings")
 django.setup()
 
 from django.utils import timezone
