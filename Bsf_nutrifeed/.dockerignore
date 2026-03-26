@@ -1,0 +1,8 @@
+_pycache__/
+*.py[cod]
+*.egg-info/
+.env
+*.sqlite3
+.git/
+.gitignore
+*.md
