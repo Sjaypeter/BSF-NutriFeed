@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from feed_production.models import FeedBatch
+
 
 
 class LarvaeGrowthRecord(models.Model):
@@ -14,7 +14,9 @@ class LarvaeGrowthRecord(models.Model):
     ]
 
     batch = models.ForeignKey(
-        FeedBatch, on_delete=models.CASCADE, related_name="larvae_records"
+        "feed_production.FeedBatch", 
+        on_delete=models.CASCADE,
+        related_name="larvae_records"
     )
     recorded_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
@@ -53,10 +55,12 @@ class InputOutputLog(models.Model):
         ("compost", "Compost"),
         ("other", "Other"),
     ]
-
     batch = models.ForeignKey(
-        FeedBatch, on_delete=models.CASCADE, related_name="io_logs"
+        "feed_production.FeedBatch", 
+        on_delete=models.CASCADE,
+        related_name="io_logs"
     )
+
     recorded_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
         null=True, related_name="io_logs"
